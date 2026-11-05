@@ -3,7 +3,7 @@
 set -e
 
 bzImage='arch/x86/boot/bzImage'
-qemuImage='/home/petr/w/k/syzkaller/bullseye.img'
+qemuImage='/home/petr/u/syzkaller/bullseye.img'
 
 qemu-system-x86_64 \
   -m 2G \
