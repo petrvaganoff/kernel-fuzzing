@@ -126,5 +126,4 @@ make CC=clang kvm_guest.config
   -d ROMFS_ON_MTD
 
 make CC=clang olddefconfig
-
 make CC=clang KCFLAGS="-g -fno-omit-frame-pointer" -j$(nproc)
