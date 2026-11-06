@@ -1,2 +1,2 @@
-# linux-fuzzing
-Configs for fuzzing of linux kernel with syzkaller.
+# kernel-fuzzing-tools
+Tools for OS kernel fuzzing with Syzkaller
