@@ -2,7 +2,9 @@
 
 set -e
 
-make CC=clang defconfig
+make mrproper
+
+make CC=clang ARCH=x86_64 defconfig
 make CC=clang kvm_guest.config
 
 ./scripts/config \
