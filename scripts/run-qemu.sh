@@ -20,6 +20,7 @@ qemu-system-x86_64 \
   -net nic,model=e1000 \
   -enable-kvm \
   -nographic \
-  -pidfile vm.pid
+  -pidfile vm.pid \
+  # -S s
 
 # ctrl + A, X - exit  from QEMU
