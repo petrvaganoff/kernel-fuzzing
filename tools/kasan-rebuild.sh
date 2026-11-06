@@ -84,7 +84,10 @@ make CC=clang kvm_guest.config
   --set-val DEVPORT n \
   --set-val UPROBE_EVENTS n \
   --set-val MODULE_FORCE_UNLOAD n \
-  -e SECURITY_TOMOYO_INSECURE_BUILTIN_SETTING
+  -e SECURITY_TOMOYO_INSECURE_BUILTIN_SETTING \
+  -e CONFIGFS_FS \
+  -e SECURITYFS \
+  -d WERROR
 
 make CC=clang olddefconfig
 make CC=clang KCFLAGS="-g -fno-omit-frame-pointer" -j$(nproc)
