@@ -47,7 +47,12 @@ make CC=clang kvm_guest.config
   -e MAC80211_HWSIM \
   --set-val IEEE802154_FAKELB n \
   -e IEEE802154_HWSIM \
-  -e CONFIG_USB_RAW_GADGET \
+  -e USB_RAW_GADGET \
+  -e USB \
+  -e USB_GADGET \
+  -e USB_LIBCOMPOSITE \
+  -e BT \
+  -e BT_BREDR \
   -e BT_HCIVHCI \
   -e GDB_SCRIPTS \
   --set-val DEBUG_INFO_REDUCED n \
@@ -125,7 +130,23 @@ make CC=clang kvm_guest.config
   -d JFFS2_CMODE_PRIORITY \
   -d CRAMFS_MTD \
   -d ROMFS_BACKED_BY_BOTH \
-  -d ROMFS_ON_MTD
+  -d ROMFS_ON_MTD \
+  -e NAMESPACES \
+  -e UTS_NS \
+  -e IPC_NS \
+  -e PID_NS \
+  -e NET_NS \
+  -e USER_NS \
+  -e CGROUP_PIDS \
+  -e MEMCG \
+  -e IEEE802154 \
+  -e IEEE802154_6LOWPAN \
+  -e MAC802154 \
+  -e MAC802154_HWSIM \
+  -e E1000 \
+  -e NETFILTER_ADVANCED \
+  -e NF_CONNTRACK_MARK \
+  -d WERROR
 
 make CC=clang olddefconfig
 make CC=clang KCFLAGS="-g -fno-omit-frame-pointer" -j$(nproc)

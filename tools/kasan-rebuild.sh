@@ -87,6 +87,26 @@ make CC=clang kvm_guest.config
   -e SECURITY_TOMOYO_INSECURE_BUILTIN_SETTING \
   -e CONFIGFS_FS \
   -e SECURITYFS \
+  -e NAMESPACES \
+  -e UTS_NS \
+  -e IPC_NS \
+  -e PID_NS \
+  -e NET_NS \
+  -e USER_NS \
+  -e CGROUP_PIDS \
+  -e MEMCG \
+  -e USB \
+  -e USB_GADGET \
+  -e USB_LIBCOMPOSITE \
+  -e BT \
+  -e BT_BREDR \
+  -e IEEE802154 \
+  -e IEEE802154_6LOWPAN \
+  -e MAC802154 \
+  -e MAC802154_HWSIM \
+  -e E1000 \
+  -e NETFILTER_ADVANCED \
+  -e NF_CONNTRACK_MARK \
   -d WERROR
 
 make CC=clang olddefconfig
