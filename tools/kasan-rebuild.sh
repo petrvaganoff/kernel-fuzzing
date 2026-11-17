@@ -1,6 +1,12 @@
 #!/bin/bash
+# Usage: kasan-rebuild.sh [--enhanced]
+#   --enhanced  добавляет KASAN_GENERIC + KASAN_EXTRA_INFO (CPU/timestamp в отчётах).
+#               Полезно при OOB/UAF и для полноты отчётов.
 
 set -e
+
+ENHANCED=0
+[ "${1}" = "--enhanced" ] && ENHANCED=1
 
 make mrproper
 
@@ -108,6 +114,12 @@ make CC=clang kvm_guest.config
   -e NETFILTER_ADVANCED \
   -e NF_CONNTRACK_MARK \
   -d WERROR
+
+if [ "$ENHANCED" = "1" ]; then
+  ./scripts/config \
+    -e KASAN_GENERIC \
+    -e KASAN_EXTRA_INFO
+fi
 
 make CC=clang olddefconfig
 make CC=clang KCFLAGS="-g -fno-omit-frame-pointer" -j$(nproc)
